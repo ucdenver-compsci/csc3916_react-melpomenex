@@ -4,13 +4,14 @@ import {connect} from 'react-redux';
 import {Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs'
 import { Image } from 'react-bootstrap';
+import ReviewForm from './reviewform';
 
 class MovieDetail extends Component {
 
     componentDidMount() {
-        const {dispatch} = this.props;
+        const {dispatch, movieId} = this.props;
         if (this.props.selectedMovie == null) {
-            dispatch(fetchMovie(this.props.movieId));
+            dispatch(fetchMovie(movieId));
         }
     }
 
@@ -44,6 +45,10 @@ class MovieDetail extends Component {
                             </p>
                         )}
                     </Card.Body>
+                    <Card.Body>
+                        <h5>Leave a Review</h5>
+                        <ReviewForm movieId={this.props.movieId} />
+                </Card.Body>
                 </Card>
             )
         }
@@ -54,9 +59,10 @@ class MovieDetail extends Component {
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        selectedMovie: state.movie.selectedMovie
+        selectedMovie: state.movie.selectedMovie,
+        movieId: ownProps.movieId // Add the movieId prop
     }
 }
 
