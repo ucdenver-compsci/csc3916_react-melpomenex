@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs'
 import { Image } from 'react-bootstrap';
+import ReviewForm from './reviewform';
 
 class MovieDetail extends Component {
 
@@ -43,6 +44,10 @@ class MovieDetail extends Component {
                                 &nbsp;  <BsStarFill /> {review.rating}
                             </p>
                         )}
+                    </Card.Body>
+                    <Card.Body>
+                        <h5>Leave a review</h5>
+                        <ReviewForm movieId = {movieId}/>
                     </Card.Body>
                 </Card>
             )
