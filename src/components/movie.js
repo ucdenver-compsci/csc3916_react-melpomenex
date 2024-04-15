@@ -6,7 +6,7 @@ import MovieDetail from "../components/moviedetail"
 import { bindActionCreators } from 'redux';
 import { Panel, Image, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs';
-import { Glyphicon } from 'react-bootstrap';
+import { BsFillStarFill } from 'react-icons/bs';
 
 // support routing by creating a new component
 
@@ -49,7 +49,7 @@ class Movie extends Component {
                         <ListGroupItem>
                             <ActorInfo actors={currentMovie.actors} />
                         </ListGroupItem>
-                        <ListGroupItem><h4><Glyphicon/></h4> </ListGroupItem>
+                        <ListGroupItem><h4><BsFillStarFill/></h4> </ListGroupItem>
                     </ListGroup>
                 </Panel>
             )
