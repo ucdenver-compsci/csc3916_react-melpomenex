@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux'
 import { fetchMovie } from "../actions/movieActions";
 import MovieDetail from "../components/moviedetail"
 import { bindActionCreators } from 'redux';
+import { Panel, Image, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { BsStarFill } from 'react-icons/bs';
+import { Glyphicon } from 'react-bootstrap';
 
 // support routing by creating a new component
 
@@ -46,7 +49,7 @@ class Movie extends Component {
                         <ListGroupItem>
                             <ActorInfo actors={currentMovie.actors} />
                         </ListGroupItem>
-                        <ListGroupItem><h4><Glypicon/></h4> </ListGroupItem>
+                        <ListGroupItem><h4><Glyphicon/></h4> </ListGroupItem>
                     </ListGroup>
                 </Panel>
             )
