@@ -62,6 +62,8 @@ class Movie extends Component {
     }
 }
 
+export default Movie;
+
 //function Movie(props) {
 //    const [selectedMovie] = useState(props.selectedMovie);
 //    const params = useParams();
